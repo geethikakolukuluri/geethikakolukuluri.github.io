@@ -1,7 +1,6 @@
 :root {
   --primary: #8b5cf6;
   --secondary: #06b6d4;
-  --accent: #ec4899;
   --dark-bg: #020617;
   --glass: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -10,69 +9,63 @@
   --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-* { box-sizing: border-box; scroll-behavior: smooth; }
-
-body { 
-  margin: 0; 
-  font-family: "Poppins", sans-serif; 
-  background-color: var(--dark-bg); 
-  color: var(--text-main); 
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-main);
   overflow-x: hidden;
 }
 
-/* --- BACKGROUND BLOBS --- */
-.blob-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-.blob-shape { position: absolute; filter: blur(80px); border-radius: 50%; opacity: 0.25; }
-.one { width: 400px; height: 400px; background: var(--primary); top: -100px; right: 15%; }
-.two { width: 350px; height: 350px; background: var(--secondary); bottom: -50px; left: 15%; }
-
-/* --- THE FIX: Centered & Constrained Layout --- */
-section {
-  max-width: 950px; /* This stops the "filled" look from left-to-right */
-  margin: 0 auto;   /* Centers the section */
-  padding: 80px 20px;
+/* THE FIX: CONTENT CONTAINER */
+.main-wrapper {
+  max-width: 1000px; /* Constrains the content width */
+  margin: 0 auto;    /* Centers the content and adds left/right space */
+  padding: 0 40px;   /* Extra padding for smaller screens so text won't touch edges */
 }
 
-/* --- HERO --- */
-.hero { text-align: center; min-height: 80vh; display: flex; align-items: center; justify-content: center; }
+/* BACKGROUND BLOB STYLES */
+.blob-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.blob-shape { position: absolute; filter: blur(100px); border-radius: 50%; opacity: 0.2; }
+.one { width: 500px; height: 500px; background: var(--primary); top: -10%; right: 5%; }
+.two { width: 400px; height: 400px; background: var(--secondary); bottom: 10%; left: 5%; }
+
+/* HERO */
+.hero { text-align: center; padding: 100px 0; }
 .profile-img {
   width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
   border: 4px solid var(--glass-border);
   transition: var(--transition);
   margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
-.profile-img:hover { transform: scale(1.1) rotate(3deg); border-color: var(--secondary); }
+.profile-img:hover { transform: scale(1.1); border-color: var(--secondary); }
+.gradient-text { background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
 
-.gradient-text { background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
-h1 { font-size: 3.5rem; margin: 10px 0; }
-
-/* --- CARDS & HOVERS --- */
+/* GLASS CARDS WITH HOVER */
 .glass-card, .skill-card {
   background: var(--glass);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   border: 1px solid var(--glass-border);
-  padding: 35px;
+  padding: 30px;
   border-radius: 24px;
   transition: var(--transition);
+  margin-bottom: 20px;
 }
 
-/* Hover Effect for all Cards */
 .glass-card:hover, .skill-card:hover {
-  transform: translateY(-12px) scale(1.02);
+  transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.07);
   border-color: var(--secondary);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* --- SKILLS GRID --- */
+/* SKILLS */
 .skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
 }
-
 .skill-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
 .skill-links a {
   padding: 6px 14px;
@@ -84,40 +77,26 @@ h1 { font-size: 3.5rem; margin: 10px 0; }
   font-size: 0.85rem;
   transition: 0.3s;
 }
-.skill-links a:hover {
-  background: var(--secondary);
-  color: white;
-  transform: scale(1.1);
-  border-color: white;
-}
+.skill-links a:hover { background: var(--secondary); transform: scale(1.1); }
 
-/* --- CONTACT GRID --- */
+/* CONTACT */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
-.contact-item { 
-  text-decoration: none; 
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  color: white; 
-  padding: 30px;
-  border-radius: 24px;
-}
-.contact-item i { font-size: 2.2rem; color: var(--secondary); margin-bottom: 12px; }
+.contact-item { text-decoration: none; display: flex; flex-direction: column; align-items: center; }
+.contact-item i { font-size: 2rem; color: var(--secondary); margin-bottom: 10px; }
 
-/* --- BUTTONS --- */
+/* BUTTONS */
 .btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 10px; display: inline-block; transition: 0.3s; }
-.primary { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; }
+.primary { background: var(--primary); color: white; }
 .secondary { border: 1px solid var(--glass-border); color: white; }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(139, 92, 246, 0.5); }
 
-footer { padding: 60px; color: var(--text-dim); text-align: center; font-size: 0.85rem; }
+footer { padding: 50px 0; text-align: center; color: var(--text-dim); }
 
-/* --- ANIMATIONS --- */
+/* ANIMATIONS */
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-.fade-in { animation: fadeIn 1.2s ease forwards; }
+.fade-in { animation: fadeIn 1s ease forwards; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
