@@ -1,82 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Geethika Kolukuluri | Full Stack Developer</title>
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://kit.fontawesome.com/a2e0e6adf2.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Geethika Kolukuluri</h1>
-    <p>Full Stack Developer | Backend-Focused Engineer</p>
-  </header>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Hi, I’m Geethika 👋</h1>
+    <p>Full Stack Developer · Backend-Focused · Entry-Level Engineer</p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn primary">View Projects</a>
+      <a href="resume.pdf" class="btn outline" target="_blank">Resume</a>
+    </div>
+  </section>
 
   <!-- ABOUT -->
-  <section>
+  <section class="about">
     <h2>About Me</h2>
     <p>
-      I am a Full Stack Developer with a strong backend foundation.
-      I enjoy building cloud-deployed, API-driven applications and
-      learning how real systems behave in production.
+      I’m a backend-focused full stack developer who enjoys building
+      cloud-deployed, API-driven applications. I care about clean design,
+      system reliability, and learning how real systems behave in production.
     </p>
   </section>
 
   <!-- PROJECTS -->
-  <section>
+  <section class="projects" id="projects">
     <h2>Projects</h2>
 
-    <div class="card">
-      <h3>Cloud & Edge Performance Simulation</h3>
-      <p>
-        Built a distributed simulation platform to analyze latency,
-        throughput, and resource utilization in cloud and edge systems.
-      </p>
-      <p><strong>Tech:</strong> Java, CloudSim Plus, REST APIs, SQL</p>
-    </div>
+    <div class="project-grid">
 
-    <div class="card">
-      <h3>Rheumatic Heart Disease Detection System</h3>
-      <p>
-        Developed a machine-learning–driven backend system integrating
-        preprocessing, inference, and API-based result delivery.
-      </p>
-      <p><strong>Tech:</strong> Java, Python, REST APIs, ML Models</p>
+      <div class="project-card">
+        <h3>☁️ Cloud & Edge Simulation Platform</h3>
+        <p>
+          Distributed simulation system analyzing latency, throughput,
+          and resource utilization in cloud and edge environments.
+        </p>
+        <span>Java · CloudSim Plus · REST · SQL</span>
+      </div>
+
+      <div class="project-card">
+        <h3>🫀 RHD Detection System</h3>
+        <p>
+          ML-driven backend system integrating preprocessing, inference,
+          and REST-based result delivery.
+        </p>
+        <span>Java · Python · ML · REST APIs</span>
+      </div>
+
     </div>
   </section>
 
   <!-- SKILLS -->
-  <section>
+  <section class="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Java, Python, JavaScript</li>
-      <li>Spring Boot, REST APIs</li>
-      <li>MySQL, PostgreSQL</li>
-      <li>AWS EC2, Docker</li>
-      <li>Git, CI/CD</li>
-    </ul>
+
+    <div class="skill-grid">
+      <div><i class="fas fa-code"></i> Java · Python · JavaScript</div>
+      <div><i class="fas fa-server"></i> Spring Boot · REST APIs</div>
+      <div><i class="fas fa-database"></i> MySQL · PostgreSQL</div>
+      <div><i class="fas fa-cloud"></i> AWS · Docker · Git</div>
+    </div>
   </section>
 
   <!-- CONFERENCE -->
-  <section>
-    <h2>Conference Presentation</h2>
+  <section class="conference">
+    <h2>Conference</h2>
     <p>
-      Presented an iOS application focused on real-time pollution
-      monitoring and data visualization at a Women in Computing conference.
+      Presented an iOS-based pollution monitoring application featuring
+      real-time data processing and visualization at a Women in Computing
+      conference.
     </p>
   </section>
 
   <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
-    <p>Email: geethikavarma22@gmail.com</p>
-    <p>
-      <a href="resume.pdf" target="_blank" class="resume-btn">Download Resume</a>
-    </p>
+  <section class="contact">
+    <h2>Let’s Connect</h2>
+    <p>📧 geethikavarma22@gmail.com</p>
+    <p>🔗 linkedin.com/in/geethikak22</p>
   </section>
 
-  <script src="script.js"></script>
+  <footer>
+    © 2025 Geethika Kolukuluri · Built from scratch
+  </footer>
+
 </body>
 </html>
