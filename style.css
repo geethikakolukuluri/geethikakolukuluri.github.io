@@ -1,9 +1,9 @@
 :root {
-  --primary: #2563eb;      /* blue */
-  --secondary: #1e293b;    /* dark slate */
-  --accent: #38bdf8;       /* light blue */
-  --bg: #f8fafc;           /* soft gray */
-  --card-bg: #ffffff;
+  --primary: #7c3aed;
+  --secondary: #06b6d4;
+  --dark: #0f172a;
+  --light: #f1f5f9;
+  --white: #ffffff;
 }
 
 * {
@@ -12,111 +12,144 @@
 
 body {
   margin: 0;
-  font-family: "Segoe UI", system-ui, sans-serif;
-  background-color: var(--bg);
-  color: var(--secondary);
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #eef2ff, #f8fafc);
+  color: var(--dark);
 }
 
-/* HEADER */
-header {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
-  padding: 70px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
+.hero h1 {
+  font-size: 3.2rem;
 }
 
-header p {
-  font-size: 1.1rem;
-  opacity: 0.9;
+.hero-buttons {
+  margin-top: 30px;
+}
+
+.btn {
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.primary {
+  background: white;
+  color: var(--primary);
+}
+
+.secondary {
+  border: 2px solid white;
+  color: white;
 }
 
 /* SECTIONS */
 section {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 20px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 90px 20px;
 }
 
-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  position: relative;
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
 }
 
-section h2::after {
-  content: "";
-  width: 60px;
-  height: 4px;
-  background: var(--primary);
+/* PROJECTS */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: linear-gradient(135deg, #ffffff, #f1f5f9);
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 35px 60px rgba(0,0,0,0.18);
+}
+
+.project-card span {
   display: block;
-  margin-top: 8px;
-  border-radius: 4px;
+  margin: 10px 0 15px;
+  color: #475569;
 }
 
-/* CARDS */
-.card {
-  background: var(--card-bg);
-  border-radius: 12px;
-  padding: 25px;
-  margin-bottom: 25px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-}
-
-.card h3 {
-  margin-top: 0;
-  color: var(--primary);
+.card-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
 /* SKILLS */
-ul {
-  padding-left: 20px;
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
 }
 
-li {
-  margin-bottom: 8px;
-}
-
-/* LINKS & BUTTONS */
-a {
-  color: var(--primary);
+.skill-card {
+  background: linear-gradient(135deg, #ecfeff, #eef2ff);
+  padding: 25px;
+  border-radius: 16px;
   font-weight: 500;
-  text-decoration: none;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-.resume-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 24px;
-  background: var(--primary);
-  color: white;
-  border-radius: 8px;
-  transition: background 0.2s ease;
-}
-
-.resume-btn:hover {
-  background: #1d4ed8;
-}
-
-/* FOOTER FEEL */
+/* FOOTER */
 footer {
+  background: var(--dark);
+  color: white;
   text-align: center;
   padding: 30px;
-  font-size: 0.9rem;
-  color: #64748b;
+}
+
+/* ANIMATIONS */
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+.delay {
+  animation-delay: 0.3s;
+}
+
+.delay-2 {
+  animation-delay: 0.6s;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }

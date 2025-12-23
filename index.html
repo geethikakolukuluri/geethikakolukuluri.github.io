@@ -6,7 +6,7 @@
   <title>Geethika Kolukuluri | Full Stack Developer</title>
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <!-- Icons -->
   <script src="https://kit.fontawesome.com/a2e0e6adf2.js" crossorigin="anonymous"></script>
@@ -17,47 +17,51 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Hi, I’m Geethika 👋</h1>
-    <p>Full Stack Developer · Backend-Focused · Entry-Level Engineer</p>
+    <h1 class="fade-in">Hi, I’m Geethika 👋</h1>
+    <p class="fade-in delay">
+      Full Stack Developer · Backend-Focused · Entry-Level Engineer
+    </p>
 
-    <div class="hero-buttons">
+    <div class="hero-buttons fade-in delay-2">
       <a href="#projects" class="btn primary">View Projects</a>
-      <a href="resume.pdf" class="btn outline" target="_blank">Resume</a>
+      <a href="resume.pdf" class="btn secondary" target="_blank">Resume</a>
     </div>
   </section>
 
   <!-- ABOUT -->
-  <section class="about">
+  <section class="about reveal">
     <h2>About Me</h2>
     <p>
-      I’m a backend-focused full stack developer who enjoys building
-      cloud-deployed, API-driven applications. I care about clean design,
-      system reliability, and learning how real systems behave in production.
+      I enjoy building backend-heavy full stack applications that are clean,
+      scalable, and actually usable. I like understanding how systems behave
+      in production and improving them through iteration.
     </p>
   </section>
 
   <!-- PROJECTS -->
   <section class="projects" id="projects">
-    <h2>Projects</h2>
+    <h2 class="reveal">Projects</h2>
 
     <div class="project-grid">
 
-      <div class="project-card">
-        <h3>☁️ Cloud & Edge Simulation Platform</h3>
+      <div class="project-card reveal">
+        <h3>☁️ Cloud & Edge Simulation</h3>
         <p>
-          Distributed simulation system analyzing latency, throughput,
+          Distributed simulation platform analyzing latency, throughput,
           and resource utilization in cloud and edge environments.
         </p>
         <span>Java · CloudSim Plus · REST · SQL</span>
+        <button class="card-btn">View Details</button>
       </div>
 
-      <div class="project-card">
+      <div class="project-card reveal">
         <h3>🫀 RHD Detection System</h3>
         <p>
           ML-driven backend system integrating preprocessing, inference,
           and REST-based result delivery.
         </p>
         <span>Java · Python · ML · REST APIs</span>
+        <button class="card-btn">View Details</button>
       </div>
 
     </div>
@@ -65,18 +69,18 @@
 
   <!-- SKILLS -->
   <section class="skills">
-    <h2>Skills</h2>
+    <h2 class="reveal">Skills</h2>
 
     <div class="skill-grid">
-      <div><i class="fas fa-code"></i> Java · Python · JavaScript</div>
-      <div><i class="fas fa-server"></i> Spring Boot · REST APIs</div>
-      <div><i class="fas fa-database"></i> MySQL · PostgreSQL</div>
-      <div><i class="fas fa-cloud"></i> AWS · Docker · Git</div>
+      <div class="skill-card reveal"><i class="fas fa-code"></i> Java · Python · JS</div>
+      <div class="skill-card reveal"><i class="fas fa-server"></i> Spring Boot · APIs</div>
+      <div class="skill-card reveal"><i class="fas fa-database"></i> MySQL · PostgreSQL</div>
+      <div class="skill-card reveal"><i class="fas fa-cloud"></i> AWS · Docker · Git</div>
     </div>
   </section>
 
   <!-- CONFERENCE -->
-  <section class="conference">
+  <section class="conference reveal">
     <h2>Conference</h2>
     <p>
       Presented an iOS-based pollution monitoring application featuring
@@ -86,15 +90,16 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="contact">
+  <section class="contact reveal">
     <h2>Let’s Connect</h2>
     <p>📧 geethikavarma22@gmail.com</p>
     <p>🔗 linkedin.com/in/geethikak22</p>
   </section>
 
   <footer>
-    © 2025 Geethika Kolukuluri · Built from scratch
+    © 2025 Geethika Kolukuluri · Built with ❤️ and code
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
