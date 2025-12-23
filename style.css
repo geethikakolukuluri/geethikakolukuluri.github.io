@@ -18,89 +18,84 @@ body {
   background-color: var(--dark-bg); 
   color: var(--text-main); 
   overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centers the whole page content */
 }
 
-/* --- BACKGROUND BLOB --- */
-.blob-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%); }
-.blob-shape { position: absolute; filter: blur(80px); border-radius: 50%; opacity: 0.2; }
-.one { width: 400px; height: 400px; background: var(--primary); top: -100px; right: 10%; }
-.two { width: 350px; height: 350px; background: var(--secondary); bottom: -50px; left: 10%; }
+/* --- BACKGROUND BLOBS --- */
+.blob-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.blob-shape { position: absolute; filter: blur(80px); border-radius: 50%; opacity: 0.25; }
+.one { width: 400px; height: 400px; background: var(--primary); top: -100px; right: 15%; }
+.two { width: 350px; height: 350px; background: var(--secondary); bottom: -50px; left: 15%; }
 
-/* --- CONSTRAINED LAYOUT --- */
+/* --- THE FIX: Centered & Constrained Layout --- */
 section {
-  width: 100%;
-  max-width: 900px; /* This prevents it from filling the whole screen width */
-  margin: 0 auto;
+  max-width: 950px; /* This stops the "filled" look from left-to-right */
+  margin: 0 auto;   /* Centers the section */
   padding: 80px 20px;
 }
 
-/* --- HERO & PROFILE --- */
-.hero { 
-  text-align: center; 
-  min-height: 80vh; 
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-}
+/* --- HERO --- */
+.hero { text-align: center; min-height: 80vh; display: flex; align-items: center; justify-content: center; }
 .profile-img {
-  width: 150px; height: 150px; border-radius: 50%; object-fit: cover;
-  border: 3px solid var(--glass-border);
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+  width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+  border: 4px solid var(--glass-border);
   transition: var(--transition);
   margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
 }
-.profile-img:hover { transform: scale(1.1); border-color: var(--secondary); }
+.profile-img:hover { transform: scale(1.1) rotate(3deg); border-color: var(--secondary); }
 
 .gradient-text { background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
-h1 { font-size: 3rem; margin: 10px 0; }
-.hero p { color: var(--text-dim); font-size: 1.1rem; }
+h1 { font-size: 3.5rem; margin: 10px 0; }
 
 /* --- CARDS & HOVERS --- */
 .glass-card, .skill-card {
   background: var(--glass);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: 1px solid var(--glass-border);
-  padding: 30px;
-  border-radius: 20px;
+  padding: 35px;
+  border-radius: 24px;
   transition: var(--transition);
 }
 
+/* Hover Effect for all Cards */
 .glass-card:hover, .skill-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-12px) scale(1.02);
+  background: rgba(255, 255, 255, 0.07);
   border-color: var(--secondary);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* --- SKILLS GRID --- */
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
-.skill-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.skill-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
 .skill-links a {
-  padding: 6px 12px;
+  padding: 6px 14px;
   background: rgba(255,255,255,0.05);
-  border-radius: 15px;
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
   color: var(--text-main);
   text-decoration: none;
-  font-size: 0.8rem;
-  border: 1px solid var(--glass-border);
+  font-size: 0.85rem;
   transition: 0.3s;
 }
-.skill-links a:hover { background: var(--secondary); transform: scale(1.1); color: white; }
+.skill-links a:hover {
+  background: var(--secondary);
+  color: white;
+  transform: scale(1.1);
+  border-color: white;
+}
 
-/* --- CONTACT --- */
+/* --- CONTACT GRID --- */
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 .contact-item { 
   text-decoration: none; 
@@ -108,21 +103,21 @@ h1 { font-size: 3rem; margin: 10px 0; }
   flex-direction: column; 
   align-items: center; 
   color: white; 
-  padding: 20px;
+  padding: 30px;
+  border-radius: 24px;
 }
-.contact-item i { font-size: 1.8rem; color: var(--secondary); margin-bottom: 10px; }
+.contact-item i { font-size: 2.2rem; color: var(--secondary); margin-bottom: 12px; }
 
 /* --- BUTTONS --- */
-.hero-buttons { margin-top: 30px; }
-.btn { padding: 12px 28px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 5px; display: inline-block; transition: 0.3s; }
-.primary { background: var(--primary); color: white; }
+.btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 10px; display: inline-block; transition: 0.3s; }
+.primary { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; }
 .secondary { border: 1px solid var(--glass-border); color: white; }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(139, 92, 246, 0.5); }
 
-footer { padding: 40px; color: var(--text-dim); font-size: 0.8rem; text-align: center; }
+footer { padding: 60px; color: var(--text-dim); text-align: center; font-size: 0.85rem; }
 
-/* ANIMATIONS */
+/* --- ANIMATIONS --- */
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-.fade-in { animation: fadeIn 1s ease forwards; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.fade-in { animation: fadeIn 1.2s ease forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
