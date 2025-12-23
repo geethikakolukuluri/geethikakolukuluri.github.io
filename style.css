@@ -112,7 +112,7 @@ h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin: 10px 0; }
 }
 
 .photo-card img {
-  width: 50%;
+  width: 70%;
   height: 90px; /* Constrained height to keep them small */
   object-fit: cover; /* Ensures image fits the box perfectly */
   display: block;
