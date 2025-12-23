@@ -19,21 +19,21 @@ body {
   overflow-x: hidden;
 }
 
-/* LAYOUT CONSTRAINTS */
+/* THE MAIN WRAPPER - Creates left/right margins and centers content */
 .main-wrapper {
-  max-width: 1000px; /* Prevents text from stretching across the entire screen */
-  margin: 0 auto;    /* Centers the column and adds side margins */
-  padding: 0 40px;   /* Prevents content from hitting screen edges */
+  max-width: 900px; /* Constrained for a clean, non-filled look */
+  margin: 0 auto;    /* Centers the column */
+  padding: 0 40px;   /* Ensures text doesn't touch screen edges */
 }
 
 /* BACKGROUND DECORATION */
 .blob-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-.blob-shape { position: absolute; filter: blur(100px); border-radius: 50%; opacity: 0.2; }
-.one { width: 500px; height: 500px; background: var(--primary); top: -10%; right: 5%; }
-.two { width: 400px; height: 400px; background: var(--secondary); bottom: 10%; left: 5%; }
+.blob-shape { position: absolute; filter: blur(100px); border-radius: 50%; opacity: 0.15; }
+.one { width: 500px; height: 500px; background: var(--primary); top: -10%; right: 10%; }
+.two { width: 400px; height: 400px; background: var(--secondary); bottom: 10%; left: 10%; }
 
 /* HERO SECTION */
-.hero { text-align: center; padding: 100px 0; }
+.hero { text-align: center; padding: 100px 0 60px; }
 .profile-img {
   width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
   border: 4px solid var(--glass-border);
@@ -42,32 +42,33 @@ body {
 }
 .profile-img:hover { transform: scale(1.1); border-color: var(--secondary); }
 .gradient-text { background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
-h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
+h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); margin: 10px 0; }
 
-/* SHARED CARDS (About, Projects, Skills) */
+/* SHARED GLASS CARDS */
 .glass-card, .skill-card {
   background: var(--glass);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: 1px solid var(--glass-border);
-  padding: 35px;
-  border-radius: 24px;
+  padding: 40px;
+  border-radius: 28px;
   transition: var(--transition);
   margin-bottom: 30px;
 }
 
 .glass-card:hover, .skill-card:hover {
   transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.08);
   border-color: var(--secondary);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
-/* PROJECT & EXPERIENCE STYLING */
+/* PROJECT & EXPERIENCE HEADERS */
 .project-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .tag {
@@ -82,7 +83,7 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
 .date-text {
   font-size: 0.95rem;
   color: var(--secondary);
-  margin-bottom: 20px;
+  margin: -10px 0 20px 0;
   font-weight: 600;
   display: block;
 }
@@ -91,6 +92,7 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
   color: var(--text-dim);
   line-height: 1.8;
   font-size: 0.98rem;
+  margin-bottom: 1.5rem;
 }
 
 /* SKILLS CLOUD */
@@ -101,7 +103,7 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
 }
 .skill-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
 .skill-links a {
-  padding: 6px 14px;
+  padding: 8px 16px;
   background: rgba(255,255,255,0.05);
   border: 1px solid var(--glass-border);
   border-radius: 20px;
@@ -110,23 +112,22 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
   font-size: 0.85rem;
   transition: 0.3s;
 }
-.skill-links a:hover { 
-  background: var(--secondary); 
-  transform: scale(1.1); 
-  border-color: white;
-}
+.skill-links a:hover { background: var(--secondary); transform: scale(1.1); color: white; }
 
-/* SIDE-BY-SIDE CONFERENCE GALLERY */
+/* CONFERENCE GALLERY - Fixes the "Large Image" issue */
 .conference-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two columns side-by-side */
-  gap: 25px; /* Margin between photos */
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 30px; /* Margins between pictures */
   margin-top: 40px;
+  max-width: 850px; /* Constrains photos to a cleaner width */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .photo-card {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--glass-border);
   transition: var(--transition);
@@ -136,8 +137,9 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
 
 .photo-card img {
   width: 100%;
-  height: 250px; /* Uniform height */
-  object-fit: cover;
+  height: 220px; /* Compact uniform height */
+  object-fit: cover; /* Prevents stretching */
+  border-bottom: 1px solid var(--glass-border);
   display: block;
 }
 
@@ -147,12 +149,12 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
   color: var(--text-dim);
   text-align: center;
   margin: 0;
+  line-height: 1.4;
 }
 
 .photo-card:hover {
   transform: translateY(-8px);
   border-color: var(--secondary);
-  background: rgba(255, 255, 255, 0.08);
 }
 
 /* CONTACT GRID */
@@ -161,15 +163,15 @@ h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin: 10px 0; }
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
 }
-.contact-item { text-decoration: none; display: flex; flex-direction: column; align-items: center; padding: 25px; }
+.contact-item { text-decoration: none; display: flex; flex-direction: column; align-items: center; padding: 30px; }
 .contact-item i { font-size: 2.2rem; color: var(--secondary); margin-bottom: 12px; }
 
 /* BUTTONS */
-.btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 10px; display: inline-block; transition: 0.3s; }
+.btn { padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; margin: 10px; display: inline-block; transition: 0.3s; }
 .primary { background: var(--primary); color: white; }
 .secondary { border: 1px solid var(--glass-border); color: white; }
 .btn.small { padding: 8px 18px; font-size: 0.85rem; margin-bottom: 30px; }
-.btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(139, 92, 246, 0.4); }
+.btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4); }
 
 /* FOOTER */
 footer { padding: 80px 0; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
@@ -180,9 +182,10 @@ footer { padding: 80px 0; text-align: center; color: var(--text-dim); font-size:
 .fade-in { animation: fadeIn 1.2s ease forwards; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-/* RESPONSIVE BREAKPOINTS */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-  .conference-gallery { grid-template-columns: 1fr; } /* Stack photos on mobile */
   .main-wrapper { padding: 0 20px; }
-  h1 { font-size: 2.5rem; }
+  .conference-gallery { grid-template-columns: 1fr; }
+  .photo-card img { height: 200px; }
+  h1 { font-size: 2.8rem; }
 }
