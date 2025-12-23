@@ -4,100 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Geethika Kolukuluri | Full Stack Developer</title>
-
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Icons -->
   <script src="https://kit.fontawesome.com/a2e0e6adf2.js" crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1 class="fade-in">Hi, I’m Geethika 👋</h1>
-    <p class="fade-in delay">
-      Full Stack Developer · Backend-Focused · Entry-Level Engineer
-    </p>
+  <div class="blob-container">
+    <div class="blob-shape one"></div>
+    <div class="blob-shape two"></div>
+    <div class="blob-shape three"></div>
+  </div>
 
-    <div class="hero-buttons fade-in delay-2">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="resume.pdf" class="btn secondary" target="_blank">Resume</a>
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="fade-in">Hi, I’m <span class="gradient-text">Geethika</span> 👋</h1>
+      <p class="fade-in delay">
+        Full Stack Developer • Backend Specialist • System Architect
+      </p>
+      <div class="hero-buttons fade-in delay-2">
+        <a href="#projects" class="btn primary">View Projects</a>
+        <a href="Kolukuluri_Resume.pdf" class="btn secondary" target="_blank">Resume</a>
+      </div>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="about reveal">
+  <section class="about reveal" id="about">
     <h2>About Me</h2>
-    <p>
-      I enjoy building backend-heavy full stack applications that are clean,
-      scalable, and actually usable. I like understanding how systems behave
-      in production and improving them through iteration.
-    </p>
+    <div class="glass-card">
+      <p>
+        I enjoy building backend-heavy full stack applications that are clean,
+        scalable, and actually usable. I specialize in Java ecosystems and 
+        distributed systems, focusing on how applications behave in high-traffic production environments.
+      </p>
+    </div>
   </section>
 
-  <!-- PROJECTS -->
   <section class="projects" id="projects">
-    <h2 class="reveal">Projects</h2>
-
+    <h2 class="reveal">Featured Projects</h2>
     <div class="project-grid">
 
       <div class="project-card reveal">
-        <h3>☁️ Cloud & Edge Simulation</h3>
-        <p>
-          Distributed simulation platform analyzing latency, throughput,
-          and resource utilization in cloud and edge environments.
-        </p>
-        <span>Java · CloudSim Plus · REST · SQL</span>
+        <div class="card-icon">☁️</div>
+        <h3>Cloud & Edge Simulation</h3>
+        <p>Distributed simulation platform analyzing latency and resource utilization in edge environments.</p>
+        <div class="tags">
+          <span>Java</span><span>CloudSim Plus</span><span>SQL</span>
+        </div>
         <button class="card-btn">View Details</button>
       </div>
 
       <div class="project-card reveal">
-        <h3>🫀 RHD Detection System</h3>
-        <p>
-          ML-driven backend system integrating preprocessing, inference,
-          and REST-based result delivery.
-        </p>
-        <span>Java · Python · ML · REST APIs</span>
+        <div class="card-icon">🫀</div>
+        <h3>RHD Detection System</h3>
+        <p>ML-driven backend system integrating preprocessing and REST-based inference delivery.</p>
+        <div class="tags">
+          <span>Python</span><span>Spring Boot</span><span>ML</span>
+        </div>
         <button class="card-btn">View Details</button>
       </div>
 
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section class="skills">
-    <h2 class="reveal">Skills</h2>
-
+    <h2 class="reveal">Tech Stack</h2>
     <div class="skill-grid">
       <div class="skill-card reveal"><i class="fas fa-code"></i> Java · Python · JS</div>
-      <div class="skill-card reveal"><i class="fas fa-server"></i> Spring Boot · APIs</div>
+      <div class="skill-card reveal"><i class="fas fa-server"></i> Spring Boot · REST</div>
       <div class="skill-card reveal"><i class="fas fa-database"></i> MySQL · PostgreSQL</div>
       <div class="skill-card reveal"><i class="fas fa-cloud"></i> AWS · Docker · Git</div>
     </div>
   </section>
 
-  <!-- CONFERENCE -->
-  <section class="conference reveal">
-    <h2>Conference</h2>
-    <p>
-      Presented an iOS-based pollution monitoring application featuring
-      real-time data processing and visualization at a Women in Computing
-      conference.
-    </p>
-  </section>
-
-  <!-- CONTACT -->
   <section class="contact reveal">
-    <h2>Let’s Connect</h2>
-    <p>📧 geethikavarma22@gmail.com</p>
-    <p>🔗 linkedin.com/in/geethikak22</p>
+    <div class="glass-card contact-container">
+      <h2>Let’s Connect</h2>
+      <div class="contact-links">
+        <p><i class="fas fa-envelope"></i> geethikavarma22@gmail.com</p>
+        <p><i class="fab fa-linkedin"></i> linkedin.com/in/geethikak22</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    © 2025 Geethika Kolukuluri · Built with ❤️ and code
+    © 2025 Geethika Kolukuluri • Built with Passion & Code
   </footer>
 
   <script src="script.js"></script>
