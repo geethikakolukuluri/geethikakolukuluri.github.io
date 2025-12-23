@@ -3,42 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Projects | Geethika Kolukuluri</title>
+  <title>Conference | Geethika Kolukuluri</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="main-wrapper">
-    <header class="section">
+    <header class="section reveal">
       <a href="index.html" class="btn secondary small">← Back Home</a>
-      <h1 class="gradient-text">Portfolio of Work</h1>
+      <h1 class="gradient-text">Conference Presentation</h1>
+      <p class="about-text">
+        Presenting technical innovation and engaging with the computing community at academic and industry forums.
+      </p>
     </header>
 
     <section class="section">
-      <div class="glass-card project-item">
+      <div class="glass-card reveal">
         <div class="project-header">
-          <h3>Enterprise Backend Systems</h3>
-          <span class="tag">TechNova Solutions</span>
+          <h3>MINK-WIC Conference</h3>
+          <span class="tag">Kansas - Women in Computing</span>
         </div>
-        <p>Developed scalable backend services using Java and Spring Boot, supporting modular web applications with over 15,000 monthly user interactions[cite: 10]. I optimized SQL queries to reduce database latency by 20% and integrated secure authentication workflows using JWT and Spring Security[cite: 11, 12].</p>
-      </div>
+        <p class="date-text">Professional Presentation & Technical Demonstration</p>
+        
+        <div class="project-description">
+          <p>
+            I had the opportunity to present a production-ready iOS application, the <strong>PollutionDetectorApp</strong>, at the MINK-WIC Conference[cite: 45, 46]. During this session, I demonstrated a full-scale environmental analysis system built using Swift and SwiftUI, showcasing real-time monitoring of air, water, soil, and noise pollution through interactive visualizations[cite: 47]. 
+          </p>
+          <p>
+            The presentation detailed the end-to-end system architecture, covering modular design patterns, backend API integration, and data processing models. I effectively communicated complex technical concepts, such as real-world data interpretation and metric calculation logic, to a diverse audience of academic and industry stakeholders[cite: 48, 49]. By addressing scalability considerations and modern software engineering best practices, I highlighted the transition from theoretical concepts to cloud-backed application deployment[cite: 49].
+          </p>
+        </div>
 
-      <div class="glass-card project-item">
-        <div class="project-header">
-          <h3>IoT Healthcare Simulation</h3>
-          <span class="tag">CloudSim Plus</span>
+        <div class="conference-gallery">
+          <div class="photo-placeholder">
+            <img src="presentation1.jpg" alt="Presenting at MINK-WIC">
+            <p>Technical demonstration and architecture walkthrough.</p>
+          </div>
+          <div class="photo-placeholder">
+            <img src="conference_group.jpg" alt="Conference Networking">
+            <p>Engaging with industry professionals and peers.</p>
+          </div>
         </div>
-        <p>Engineered a distributed simulation system using Java and CloudSim Plus to model cloud workloads[cite: 26, 27]. I implemented backend processing pipelines and analyzed resource utilization to achieve 25% efficiency improvements in system performance[cite: 28, 29].</p>
-      </div>
-
-      <div class="glass-card project-item">
-        <div class="project-header">
-          <h3>RHD Detection System</h3>
-          <span class="tag">ML & REST APIs</span>
-        </div>
-        <p>Developed a hybrid machine learning framework using Random Forest and SVM to improve disease prediction accuracy[cite: 32, 33]. I engineered scalable integration layers using Java and REST APIs to orchestrate data preprocessing and model inference[cite: 34].</p>
       </div>
     </section>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
