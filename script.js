@@ -1,30 +1,27 @@
+// Scroll Reveal Logic
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
-  for (let i = 0; i < reveals.length; i++) {
+  reveals.forEach(el => {
     const windowHeight = window.innerHeight;
-    const elementTop = reveals[i].getBoundingClientRect().top;
-    const elementVisible = 100;
-
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
     }
-  }
+  });
 }
 
-// Parallax for Background Blobs
+// Mouse movement for background blobs
 document.addEventListener("mousemove", (e) => {
   const blobs = document.querySelectorAll(".blob-shape");
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
-
+  const x = e.clientX / window.innerWidth;
+  const y = e.clientY / window.innerHeight;
+  
   blobs.forEach((blob, index) => {
-    const speed = (index + 1) * 20;
-    const x = (window.innerWidth - mouseX * speed) / 100;
-    const y = (window.innerHeight - mouseY * speed) / 100;
-    blob.style.transform = `translateX(${x}px) translateY(${y}px)`;
+    const shift = (index + 1) * 30;
+    blob.style.transform = `translate(${x * shift}px, ${y * shift}px)`;
   });
 });
 
 window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
+revealOnScroll(); // Run once on load
