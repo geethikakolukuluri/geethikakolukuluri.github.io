@@ -1,4 +1,3 @@
-// Scroll Reveal Logic
 const reveals = document.querySelectorAll(".reveal");
 
 function revealOnScroll() {
@@ -13,14 +12,14 @@ function revealOnScroll() {
   }
 }
 
-// Mouse Parallax Effect for Background Blobs
+// Parallax for Background Blobs
 document.addEventListener("mousemove", (e) => {
   const blobs = document.querySelectorAll(".blob-shape");
   const mouseX = e.clientX;
   const mouseY = e.clientY;
 
   blobs.forEach((blob, index) => {
-    const speed = (index + 1) * 30;
+    const speed = (index + 1) * 20;
     const x = (window.innerWidth - mouseX * speed) / 100;
     const y = (window.innerHeight - mouseY * speed) / 100;
     blob.style.transform = `translateX(${x}px) translateY(${y}px)`;
@@ -28,6 +27,4 @@ document.addEventListener("mousemove", (e) => {
 });
 
 window.addEventListener("scroll", revealOnScroll);
-
-// Initial check
 revealOnScroll();
