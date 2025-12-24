@@ -19,11 +19,10 @@ body {
   overflow-x: hidden;
 }
 
-/* THE FIX: Prevents text from hitting screen edges */
 .main-wrapper {
   max-width: 1000px; 
   margin: 0 auto;    
-  padding: 0 40px;   /* Margin space on left/right */
+  padding: 0 40px;   
 }
 
 /* 2. DYNAMIC BACKGROUND */
@@ -63,9 +62,9 @@ body {
   border-radius: 28px;
   transition: var(--transition);
   margin-bottom: 30px;
+  height: auto;
 }
 
-/* Unified Hover Effect */
 .glass-card:hover, .skill-card:hover {
   transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.08);
@@ -73,45 +72,45 @@ body {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
 }
 
-.about-content p { line-height: 1.8; color: var(--text-dim); margin-bottom: 20px; }
-
-/* 5. SKILLS GRID & LINKS */
+/* 5. TECHNICAL EXPERTISE (Action Buttons) */
 .skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  margin-bottom: 50px;
+  margin-top: 30px;
 }
 
-.skill-card h3 {
-  margin-top: 0;
+.skill-card i {
+  font-size: 2.5rem;
   color: var(--secondary);
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  display: block;
 }
 
 .skill-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column; /* Stacked buttons for action look */
+  gap: 10px;
 }
 
 .skill-links a {
-  padding: 8px 16px;
+  display: block;
+  text-align: center;
+  padding: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--glass-border);
-  border-radius: 20px;
+  border-radius: 12px;
   color: var(--text-main);
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: 600;
   transition: 0.3s ease;
 }
 
 .skill-links a:hover {
   background: var(--secondary);
   color: white;
-  transform: scale(1.1);
-  border-color: white;
+  transform: translateX(5px); /* Slide effect on hover */
 }
 
 /* 6. PROJECT & CONFERENCE PAGE SPECIFICS */
@@ -132,24 +131,22 @@ body {
 }
 
 .date-text {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   color: var(--secondary);
-  margin: -10px 0 20px 0;
   font-weight: 600;
-  display: block;
 }
 
-/* CONFERENCE GALLERY - Side-by-side & Compact */
+/* CONFERENCE GALLERY FIX */
 .conference-gallery {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
-  gap: 20px;
+  gap: 25px;
   margin-top: 40px;
 }
 
 .photo-card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--glass-border);
   transition: var(--transition);
@@ -157,24 +154,43 @@ body {
   flex-direction: column;
 }
 
-.photo-card img {
-  width: 50%;
-  height: 90px; 
-  object-fit: cover;
-  display: block;
+/* Fix for large images: ensure they fill the box without overflowing */
+.image-box {
+  width: 100%;
+  height: 200px; /* Controlled height for the "box" */
+  overflow: hidden;
 }
 
-.photo-card p {
-  padding: 12px;
-  font-size: 0.8rem;
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This makes the image fill the box design */
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.photo-card:hover .image-box img {
+  transform: scale(1.1); /* Zoom effect inside the box */
+}
+
+.caption-box {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caption-box p {
+  font-size: 0.85rem;
   color: var(--text-dim);
   text-align: center;
   margin: 0;
+  line-height: 1.4;
 }
 
-.photo-card:hover { transform: translateY(-5px); border-color: var(--secondary); }
-
-/* 7. CONTACT GRID */
+/* 7. CONTACT & BUTTONS */
 .contact-grid { 
   display: grid; 
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
@@ -196,7 +212,6 @@ body {
   margin-bottom: 12px; 
 }
 
-/* 8. BUTTONS */
 .btn { 
   padding: 14px 32px; 
   border-radius: 50px; 
@@ -215,22 +230,22 @@ body {
   box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4); 
 }
 
-/* 9. FOOTER & ANIMATIONS */
+/* 8. ANIMATIONS */
 footer { padding: 80px 0; text-align: center; color: var(--text-dim); font-size: 0.85rem; }
 
 .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
-.fade-in { animation: fadeIn 1.2s ease forwards; }
+.fade-in { animation: fadeIn 1s ease forwards; }
 
 @keyframes fadeIn { 
   from { opacity: 0; transform: translateY(20px); } 
   to { opacity: 1; transform: translateY(0); } 
 }
 
-/* 10. MOBILE RESPONSIVE ADAPTATION */
+/* 9. MOBILE ADAPTATION */
 @media (max-width: 768px) {
   .main-wrapper { padding: 0 20px; }
-  .glass-card, .skill-card { padding: 25px; }
   .conference-gallery { grid-template-columns: 1fr; }
+  .image-box { height: 180px; }
   h1 { font-size: 2.8rem; }
 }
